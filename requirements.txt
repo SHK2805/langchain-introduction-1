@@ -1,5 +1,6 @@
 langchain
 python-dotenv
+langchain-core
 langchain-openai
 langchain-community
 bs4

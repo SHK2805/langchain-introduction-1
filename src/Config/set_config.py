@@ -6,6 +6,7 @@ class Config:
         self.langchain_api_key = get_langchain_key()
         self.langsmith_v2_tracing = get_langsmith_v2_tracing()
         self.project_name = get_project_name()
+        self.llm_model_name = get_openai_llm_model_name()
 
     def set(self):
         try:
@@ -13,6 +14,7 @@ class Config:
             os.environ['LANGCHAIN_API_KEY'] = self.langchain_api_key
             os.environ['LANGCHAIN_PROJECT'] = self.project_name
             os.environ['LANGSMITH_TRACING_V2'] = self.langsmith_v2_tracing
+            os.environ['OPENAI_LLM_MODEL_NAME'] = self.llm_model_name
         except Exception as e:
             print(f'Error setting environment variables: {e}')
             return False
