@@ -3,7 +3,14 @@ from langchain_openai import ChatOpenAI
 from langchain.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import StrOutputParser, JsonOutputParser
 
+from src.Config.set_config import Config
 from src.utils.project_environment.envs import get_openai_llm_model_name
+
+config = Config()
+if config.set():
+    print("Environment variables set")
+else:
+    print("Environment variables NOT set")
 
 # Run the main.py to set the Config
 llm = ChatOpenAI(model=get_openai_llm_model_name())

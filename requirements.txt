@@ -5,3 +5,4 @@ langchain-openai
 langchain-community
 bs4
 faiss-cpu
+langchain-text-splitters
